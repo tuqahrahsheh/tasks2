@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        /* 1. Write a JavaScript program that accept two integers and
+ * display the larger.Go to the editor */
+//    solution 
+
+let num1 = 4;
+let num2 = 6;
+let max = Math.max(num1, num2);
+console.log(Math.max(num1, num2));
+
+/* 2. Write a JavaScript conditional statement to find the sign
+ of product of three numbers. Display an alert box with the 
+ specified sign. Go to the editor 
+Sample numbers : 3, -7, 2 
+Output : The sign is - */
+
+var numb1 = 3;
+var numb2 = -7;
+var numb3 = 2;
+var product = numb1 * numb2 * numb3;
+if (product > 0) {
+    alert("The sign is +");
+} else if (product < 0) {
+    alert("The sign is -");
+} else {
+    alert("The product is zero");
+}
+
+
+
+/* 3. Write a JavaScript conditional statement to sort three numbers. Display an alert box to show the result. Go to the editor 
+Sample numbers : 0, -1, 4 
+Output : 4, 0, -1 */
+
+
+/*4. Write a JavaScript conditional statement to find the largest of five numbers. 
+Display an alert box to show the result. Go to the editor 
+Sample numbers : -5, -2, -6, 0, -1 
+Output : 0 */
+
+
+var number1 = -5;
+var number2 = -2;
+var number3 = -6;
+var number4 = 0;
+var number5 = -1;
+var largest;
+
+
+if (number1 >= number2 && number1>=number3 && number1 >= number4&& number1 >= number5) {
+    largest = num1;
+} else if (number2 >= number1 && number2 >= number3&& number2 >= number4 && number2 >= number5) {
+    largest = num2;
+} else if (number3 >= number1&& number3>= number2 && number3>=number4 && number3 >= number5) {
+    largest = number3;
+} else if (number4>= number1 &&number4 >= number2 && number2>= number3 && number4 >= number5) {
+    largest = number4;
+} else {
+    largest = number5;
+}
+alert("The largest number is: " + largest);
+
+/*= 5.Write the if statement to display "Hello World" if x is greater than y, otherwise alert "Goodbye".*/
+var x = 10;
+var y = 1;
+
+if (x > y) {
+    alert("Hello World");
+} else {
+    alert("Goodbye");
+}
+
+
+    </script>
+</body>
+</html>
