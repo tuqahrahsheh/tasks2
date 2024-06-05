@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            border: solid 1px black;
+            width: 200px;
+             background-color: yellow;
+
+        }
+    </style>
+</head>
+<body>
+<p id="t1">Hello world</p>
+    <script>
+
+function t1 ()
+{
+    document.getElementById("t1").innerHTML = "Can i help You ?";
+}
+function r1 ()
+{
+    document.getElementById("t1").innerHTML = "Hello world !";
+}
+document.getElementById('t1').addEventListener("mouseover", t1);
+document.getElementById('t1').addEventListener("mouseleave", r1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select name="flag" id="options" >
+        <option value="jo">jordan</option>
+        <option value="pa">palastine</option>
+    </select>
+    <br><br>
+    <img src="img1.jfif" alt="" height="200px" width="300px" id="jo">
+<img src="img2.jfif" alt="" height="200px" width="300px" id="pa">
+    <script>
+
+function changeImage() {
+            var selectedOption = document.getElementById("options").value;
+            if (selectedOption === "jo") {
+                document.getElementById("jo").src = "img1.jfif";
+                document.getElementById("pa").src = "img2.jfif";
+            } else if (selectedOption === "pa") {
+                document.getElementById("jo").src = "img2.jfif";
+                document.getElementById("pa").src = "img1.jfif";
+            }
+        }
+
+        document.getElementById("options").addEventListener("change", changeImage);
+</script
+
+</body>
+</html>
