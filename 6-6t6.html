@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playlist Application</title>
+</head>
+<body>
+
+
+<input type="text" id="songName" placeholder="Enter song name">
+<button id="addButton">Add Song</button>
+
+
+<script>
+
+  var songNameInput = document.getElementById("songName");
+  var addButton = document.getElementById("addButton");
+  var playlistUl = document.getElementById("playlist");
+
+  
+  function addSong() {
+    
+    var songName = songNameInput.value;
+    var artist = artistInput.value;
+
+    
+    var li = document.createElement("li");
+    
+    li.textContent = songName + " - " + artist;
+    
+    playlistUl.appendChild(li);
+
+    
+    songNameInput.value = "";
+    artistInput.value = "";
+    songNameInput.focus();
+  }
+  addButton.addEventListener("click", function() {
+    addSong();
+  });
+
+  songNameInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      addSong();
+    }
+  });
+  artistInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      addSong();
+    }
+  });
+</script>
+
+</body>
+</html>

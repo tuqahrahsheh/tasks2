@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Image</title>
+</head>
+<body>
+
+<select id="imageSelect">
+  <option value="no-image">No Image</option>
+  <option value="italy.jfif">Italy</option>
+  <option value="kanada.png">Kanada</option>
+  <option value="du.jfif">Dubai</option>
+</select>
+
+<img id="displayImage" src="no-image.jpg" >
+
+<script>
+  
+  var select = document.getElementById("imageSelect");
+  var image = document.getElementById("displayImage");
+
+  select.addEventListener("change", function() {
+
+    var selectedOption = select.options[select.selectedIndex];
+    
+
+    if (selectedOption.value === "no-image") {
+      image.src = "no-image.jpg";
+      image.alt = "No Image";
+    } else {
+      image.src = selectedOption.value;
+      image.alt = selectedOption.text;
+    }
+  });
+</script>
+
+</body>
+</html>

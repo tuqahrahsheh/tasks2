@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        p{
+            border: solid 1px black;
+            height: 150px;
+            width: 400px ;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    
+    <select id="font-family" onchange="font_family()">
+        <option value="cursive">cursive</option>
+        <option value="fantasy">fantasy</option>
+        <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
+        <option value="serif">serif</option>
+    </select>
+
+    <select name="" id="font-size" onchange="fontsize()">
+        <option value="20px">20px</option>
+        <option value="50px">50px</option>
+    </select>
+
+    <input type="checkbox" id="underline" onclick="underline()">
+    <label for="underline">underline</label>
+    <input type="checkbox" id="italic" onclick="Italic()">
+    <label for="italic">italic</label>
+    <input type="checkbox" id="bold" onclick="Bold()">
+    <label for="bold">Bold</label>
+    <p id="text"> The quick brown fox over the lazy dog </p>
+    <script>
+        function font_family() {
+            var font = document.getElementById("font-family").value;
+            document.getElementById("text").style.fontFamily = font;
+        }
+
+        function fontsize() {
+            var size = document.getElementById("font-size").value;
+            document.getElementById("text").style.fontSize = size;
+        }
+
+        function underline() {
+            var isChecked = document.getElementById("underline").checked;
+            document.getElementById("text").style.textDecoration = isChecked ? "underline" : "none";
+        }
+
+        function Italic() {
+            var isChecked = document.getElementById("italic").checked;
+            document.getElementById("text").style.fontStyle = isChecked ? "italic" : "normal";
+        }
+
+        function Bold() {
+            var isChecked = document.getElementById("bold").checked;
+            document.getElementById("text").style.fontWeight = isChecked ? "bold" : "normal";
+        }
+    </script>
+</body>
+</html>

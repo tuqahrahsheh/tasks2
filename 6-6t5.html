@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WYSIWYG Text Editor</title>
+</head>
+<body>
+
+<form id="editorForm">
+ 
+  <label for="password">Password (min 6 characters):</label>
+  <input type="password" id="password">
+  <span id="passwordError" style="color: red;"></span>
+<br>
+  <label for="confirmPassword">Repeat Password:</label>
+  <input type="password" id="confirmPassword">
+  <span id="confirmPasswordError" style="color: red;"></span>
+
+  <button type="submit" id="submitButton" style="display: none;">Submit</button>
+</form>
+
+<div id="text" style="margin-top: 20px;"></div>
+
+<script>
+
+  var form = document.getElementById("editorForm");
+  var passwordInput = document.getElementById("password");
+  var confirmPasswordInput = document.getElementById("confirmPassword");
+  var passwordErrorSpan = document.getElementById("passwordError");
+  var confirmPasswordErrorSpan = document.getElementById("confirmPasswordError");
+  var submitButton = document.getElementById("submitButton");
+
+  
+  function validatePasswords() {
+    var password = passwordInput.value;
+    var confirmPassword = confirmPasswordInput.value;
+
+
+    if (password.length < 6) {
+      passwordErrorSpan.textContent = "Password must be at least 6 characters long.";
+      return false;
+    } else {
+      passwordErrorSpan.textContent = "";
+    }
+
+    if (password !== confirmPassword) {
+      confirmPasswordErrorSpan.textContent = "Passwords do not match.";
+      return false;
+    } else {
+      confirmPasswordErrorSpan.textContent = "";
+    }
+
+    return true;
+  }
+
+  
+  form.addEventListener("input", function() {
+    var passwordsValid = validatePasswords();
+
+
+    if (passwordsValid) {
+      submitButton.style.display = "block";
+    } else {
+      submitButton.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>
